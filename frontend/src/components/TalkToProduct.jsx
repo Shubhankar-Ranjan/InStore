@@ -7,7 +7,7 @@ const TalkToProduct = () => {
   const [answer, setAnswer] = useState("");
   const [generatingAnswer, setGeneratingAnswer] = useState(false);
   const [imageSrc, setImageSrc] = useState(null);
-  const [productData, setProductData] = useState("Life");
+  const [productData, setProductData] = useState("Oreo");
   const videoRef = useRef(null);
 
 const initialPrompt = `Describe ${productData} in 20 words refering it as you`
@@ -29,7 +29,7 @@ const initialPrompt = `Describe ${productData} in 20 words refering it as you`
           setImageSrc(image);
 
           // Stop all video tracks immediately after capturing the image
-          stream.getTracks().forEach(track => track.stop());
+          stream.getTracks().forEach(track => track.stop()); 
             // Taking response from CNN model and storing it in productData
           // Initial API call after capturing the image
           setGeneratingAnswer(true);
